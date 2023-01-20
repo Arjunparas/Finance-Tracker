@@ -30,23 +30,24 @@ const Sidebar = () => {
 
   return (
     <>
-      <Box bg="#1F2128" h="auto" pl={8}>
-        <Box pt={6}>
+      <Box bg="#1F2128" h="auto" pl={0}>
+        <Box pt={6} w="90%" mx="auto">
           <Image src={SidebarIcon} />
         </Box>
-        <Box mt={20}>
+        <Box mt={20} w="90%" mx="auto">
           <Text color="#818591" fontSize={"10px"} fontWeight={400}>
             ADMIN TOOLS
           </Text>
-          <Box>
+          <Box mt={6} justifyContent="center">
             {sidebarData.map((item, index) => (
-              <Box mt={5}>
+              <Box  >
                 <Link to={item.pathname}>
                   <Box
                     key={index}
                     w="full"
                     bg={item.pathname === pathname ? "#233c53" : "transparent"}
                     rounded="xl"
+                   
                   >
                     <Box
                       display="flex"
