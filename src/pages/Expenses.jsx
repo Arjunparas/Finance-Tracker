@@ -11,17 +11,26 @@ const Expenses = () => {
     <Box bg="#1F2128" h="auto">
       <Layout>
         <Navbar title="Expenses" />
-          <Box mt={3} pl={10}>
+        <Box mt={3} pl={{ lg: 10, md: 5, sm: 3 }}>
           <ExpensesCard />
         </Box>
 
-        <Box display="flex" gap={5} >
-        <Box mt={5} w="66%" pl={10}>
-         <ExpensesTable  />
-        </Box>
-        <Box mr={4} mt={5} w="30%">
-          <ExpensesGraph />
-        </Box>
+        <Box display={{ lg: "flex", md: "", sm: "" }} gap={5}>
+          <Box
+            mt={5}
+            w={{ lg: "66%", md: "97%", sm: "97%" }}
+            pl={{ lg: 10, md: 3, sm: 3 }}
+          >
+            <ExpensesTable />
+          </Box>
+
+          <Box
+            mt={5}
+            w={{ lg: "30%", md: "96%", sm: "92%" }}
+            ml={{ lg: 0, md: 2, sm: 4 }}
+          >
+            <ExpensesGraph />
+          </Box>
         </Box>
       </Layout>
     </Box>

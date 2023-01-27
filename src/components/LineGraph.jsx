@@ -73,7 +73,7 @@ import { Box } from '@chakra-ui/react';
 
 const LineGraph = () => {
   return (
-    <Box h="40vh" w="100%">
+    <Box h={{lg:"40vh",md:"30vh",sm:"30vh"}} w="100%">
     <Line options={options} data={data} />
   </Box>
   )

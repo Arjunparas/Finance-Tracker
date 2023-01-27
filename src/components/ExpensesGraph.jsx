@@ -42,7 +42,7 @@ export const data = {
 
 const ExpensesGraph = () => {
   return (
-    <Box bg="#35373D" p={2} rounded="xl" h="80vh" pt={10}>
+    <Box bg="#35373D" p={2} rounded="xl" h={{lg:"80vh",md:"40vh",sm:"40vh"}} pt={10}>
       <Doughnut
         data={data}
         options={{

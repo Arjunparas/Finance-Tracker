@@ -24,19 +24,36 @@ const Revenue = () => {
     <Box bg="#1F2128" h="auto">
       <Layout>
         <Navbar title="Revenue" />
-        <Box display={"flex"} mt={5}>
-          <Box w="65%">
-            <Box bg="#35373D" w="92%" mx="auto" rounded="xl" ml={10}>
+        <Box display={{ lg: "flex", md: "", sm: "" }} mt={5}>
+          <Box w={{ lg: "65%", md: "100%", sm: "98%" }}>
+            <Box
+              bg="#35373D"
+              w={{ lg: "92%", md: "98%", sm: "94%" }}
+              mx="auto"
+              rounded="xl"
+              ml={{ lg: 10, md: 3, sm: 3 }}
+            >
               <Box
-                display="flex"
-                justifyContent={"space-evenly"}
+                display={{ lg: "flex", md: "", sm: "grid" }}
+                placeItems={{ sm: "center" }}
+                h={{ sm: "30vh" }}
+                justifyContent={{
+                  lg: "space-evenly",
+                  md: "",
+                  sm: "center",
+                }}
                 alignItems="center"
               >
-                <Box>
+                <Box mt={{sm:2}}>
                   <Image src={RevenueIcon} />
                 </Box>
                 <Box>
-                  <Text fontSize={"12px"} fontWeight={700} color="#0BAFFF">
+                  <Text
+                    fontSize={"12px"}
+                    fontWeight={700}
+                    color="#0BAFFF"
+                    textAlign={"center"}
+                  >
                     Total Revenue
                   </Text>
                   <Text color="white" fontSize={"30px"} fontWeight={700}>
@@ -44,21 +61,30 @@ const Revenue = () => {
                   </Text>
                 </Box>
                 <Box>
-                  <SingleLineGraph />
+                  <SingleLineGraph bgColor={"#0BAFFF"} bdColor={"#0BAFFF"} />
                 </Box>
               </Box>
             </Box>
 
-            <Box w="95%" mx="auto" ml={10}>
+            <Box
+              w={{ lg: "95%", md: "98%", sm: "100%" }}
+              mx="auto"
+              ml={{ lg: 10, md: 6, sm: 3 }}
+            >
               <RevenueCard />
             </Box>
           </Box>
 
-          <Box w="35%">
-            <Box mt={5}>
+          <Box w={{ lg: "35%", md: "98%", sm: "100%" }}>
+            <Box
+              mt={{ lg: 5, md: 3, sm: 5 }}
+              w={{ lg: "", md: "", sm: "100%" }}
+              mx={{sm:"auto"}}
+              h={{ lg: "60vh", md: "40vh", sm: "40vh" }}
+            >
               <PieChartGraph />
             </Box>
-            <Box mt={20}>
+            <Box mt={{lg:20,md:15,sm:5}}>
               <Text
                 color="white"
                 fontSize="24px"
@@ -69,7 +95,7 @@ const Revenue = () => {
               </Text>
               <Box mt={10}>
                 <TableContainer>
-                  <Table variant={"unstyled"}>
+                  <Table variant={"unstyled"} size={{lg:"md",md:"md",sm:"sm"}}>
                     <Thead>
                       <Tr>
                         <Th></Th>
@@ -81,10 +107,10 @@ const Revenue = () => {
                         <Tr>
                           <Td>
                             <Box display="flex" gap={8}>
-                              <Box>
+                              <Box w="30%">
                                 <Image src={item.icon} w="44px" h="44px" />
                               </Box>
-                              <Box>
+                              <Box w="30%">
                                 <Text
                                   color="white"
                                   fontSize="14px"

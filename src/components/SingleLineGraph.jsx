@@ -44,7 +44,7 @@ import { Box } from '@chakra-ui/react';
     "Jan 9",
   ];
 
-const SingleLineGraph = () => {
+const SingleLineGraph = ({bdColor,bgColor,color}) => {
  
 
   const data = {
@@ -55,14 +55,14 @@ const SingleLineGraph = () => {
         label: "Revenue",
         color:"white",
         data: labels.map(() => faker.datatype.number({ min: 0, max: 40 })),
-        borderColor: "#0BAFFF",
-        backgroundColor: "#0BAFFF",
+        borderColor: bdColor,
+        backgroundColor: bdColor,
       },
     ],
   };
 
   return (
-    <Box h="25vh" w="100%">
+    <Box h={{lg:"25vh",md:"18vh",sm:"20vh"}} w="100%">
     <Line options={options} data={data} />
   </Box>
   )

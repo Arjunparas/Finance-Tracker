@@ -17,19 +17,20 @@ import { expensesMainData } from "./constants/Card";
 const ExpensesTable = () => {
   return (
     <Box>
-      <Box bg="#35373D" p={2} rounded="xl">
+      <Box bg="#35373D" p={{lg:2,md:2,sm:1}} rounded="xl">
         <Box display={"flex"} justifyContent="space-between">
           <Box>
-            <Text color="white" fontSize="16px" fontWeight={700} mt={3} ml={3}>
+            <Text color="white" fontSize={{lg:"16px",md:"14px",sm:"13px"}} fontWeight={700} mt={3} ml={3}>
               Recent Entries
             </Text>
           </Box>
           <Box>
             <Select
+              mt={{sm:2}}
               borderRadius="2xl"
               bg="rgba(255, 255, 255, 0.1)"
               w="85%"
-              h="7vh"
+              h={{lg:"7vh",md:"4  vh",sm:"4vh"}}
               color="white"
               style={{ border: "none" }}
               placeholder="Show: This Month"
@@ -44,7 +45,7 @@ const ExpensesTable = () => {
 
         <Box mt={5}>
           <TableContainer>
-            <Table variant="unstyled">
+            <Table variant="unstyled" size={{lg:"md",md:"md",sm:"sm"}}>
               <Thead>
                 <Tr bg="rgba(255, 255, 255, 0.1)" shadow="lg">
                   <Th borderBottomLeftRadius={25} borderTopLeftRadius={25}>
@@ -102,14 +103,14 @@ const ExpensesTable = () => {
                           ></Box>
                         </Box>
                         <Box>
-                          <Text color="white" fontSize="16px" fontWeight={600}>
+                          <Text color="white" fontSize={{lg:"16px",md:"14px",sm:"12px"}} fontWeight={600}>
                             {item.title}
                           </Text>
                         </Box>
                       </HStack>
                       <Text
                         color="#84818A"
-                        fontSize={"12px"}
+                        fontSize={{lg:"12px",md:'12px',sm:"10px"}}
                         fontWeight={500}
                         ml={3.5}
                       >
@@ -145,7 +146,7 @@ const ExpensesTable = () => {
                               ? "#20C9AC"
                               : "#4FBF67"
                           }
-                          fontSize="12px"
+                          fontSize={{lg:"12px",md:"12px",sm:"10px"}}
                           fontWeight={600}
                         >
                           {item.type}
@@ -156,7 +157,7 @@ const ExpensesTable = () => {
                       <Box>
                         <Text
                           color="white"
-                          fontSize="14px"
+                          fontSize={{lg:"14px",md:"12px",sm:"12px"}}
                           fontWeight={600}
                           textAlign="center"
                         >
@@ -165,7 +166,7 @@ const ExpensesTable = () => {
                       </Box>
                     </Td>
                     <Td>
-                      <Text color="white" fontSize="14px" fontWeight={600}>
+                      <Text color="white" fontSize={{lg:"14px",md:"12px",sm:"12px"}} fontWeight={600}>
                         {item.amount}
                       </Text>
                     </Td>

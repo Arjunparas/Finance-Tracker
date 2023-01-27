@@ -73,7 +73,7 @@ export const TransationData = [
   },
   {
     icon: RefundPayment,
-    text: "Process refund to",
+    text: "Refund to",
     number: 10024,
     dayAndTime: "Today, 10:30 AM",
     amount: "- $250.00",
@@ -81,7 +81,7 @@ export const TransationData = [
   },
   {
     icon: FailedPayment,
-    text: "Payment failed from",
+    text: "Failed from",
     number: 10025,
     dayAndTime: "Today, 10:30 AM",
     amount: "+ $128.00",

@@ -3,28 +3,33 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Text,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { BsFillEyeFill } from "react-icons/bs";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 
-const Password = () => {
+const Password = ({ userReg }) => {
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
   return (
     <>
       <FormLabel color="#808191" mt="5%" mb={-1}>
+        <Text fontSize={{lg:"16px",md:"14px",sm:"12px" }}fontWeight={500}>
         Password
+        </Text>
+        
       </FormLabel>
       <InputGroup position="relative">
         <Input
+          pl={2}
           variant="flushed"
           colorScheme="#0BAFFF"
           w="100%"
           fontSize={"14px"}
           fontWeight="500"
           color="white"
-          // h={5}
+          {...userReg("password")}
           type={show ? "text" : "password"}
           focusBorderColor={"#0BAFFF"}
         />
@@ -34,7 +39,11 @@ const Password = () => {
           position="absolute"
           right={-5}
         >
-          {show ? <BsFillEyeFill color="white" /> : <AiOutlineEyeInvisible color="white" />}
+          {show ? (
+            <BsFillEyeFill color="white" />
+          ) : (
+            <AiOutlineEyeInvisible color="white" />
+          )}
         </InputRightElement>
       </InputGroup>
     </>

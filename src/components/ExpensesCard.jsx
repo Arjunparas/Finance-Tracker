@@ -4,17 +4,17 @@ import { editIcon } from "../assets/images/Icons";
 import { expensesGraphData } from "./constants/Card";
 import SingleLineGraph from "./SingleLineGraph";
 
-const ExpensesCard = ({bdColor,bgColor}) => {
+const ExpensesCard = () => {
 
   return (
     <>
       <Box display="flex">
-        <Grid templateColumns="repeat(3, 1fr)" gap={5} mt={5}>
+        <Grid templateColumns={{lg:"repeat(3, 1fr)",md:"repeat(1, 1fr)",sm:"repeat(1,1fr)"}} gap={5} mt={5}>
              {expensesGraphData.map((item) => (
           <GridItem w="100%" gap={5} >
               <Box  bg="rgba(255, 255, 255, 0.1)" p={2} rounded="xl"pt={5}>
                 <Box display={"flex"} justifyContent="space-between">
-                  <Box display="flex" gap={5} mt={2} >
+                  <Box display="flex" gap={{lg:5,md:3,sm:2}} mt={2} >
                     <Image src={item.icon} w="16px" h="16px" />
                     <Text color={item.bdColor} fontSize="12px" fontWeight={700}>
                       {item.title}
@@ -26,7 +26,7 @@ const ExpensesCard = ({bdColor,bgColor}) => {
                       borderRadius="2xl"    
                       bg="rgba(255, 255, 255, 0.1)"
                       w="85%"
-                      h="7vh"
+                      h={{lg:"7vh",md:"4vh",sm:"4vh"}}
                       color="white"
                       style={{ border: "none" }}
                       placeholder="Week"
@@ -52,7 +52,6 @@ const ExpensesCard = ({bdColor,bgColor}) => {
                   <SingleLineGraph bgColor={item.bgColor} bdColor={item.bdColor} />
                 </Box>
               </Box>
-           
           </GridItem>
            ))}
         </Grid>

@@ -14,7 +14,13 @@ const Card = ({ item, key }) => {
     iconTwo,
   } = item;
   return (
-    <Box borderRight="1px solid #979797" p={3} w="90%" mx="auto">
+    <Box
+      borderRight={{ lg: "1px solid #979797", md: "1px solid #979797" }}
+      borderBottom={{lg:"0px",md:"0px",sm:"1px solid #979797"}}
+      p={3}
+      w={{ lg: "90%", md: "92%", sm: "100%" }}
+      mx="auto"
+    >
       <Box display="flex" justifyContent="space-between" key={key}>
         <Box display="flex" gap={3} w="100%" ml={4}>
           <Image src={iconOne} />
@@ -26,14 +32,16 @@ const Card = ({ item, key }) => {
           <Image src={DashPlus} />
         </Box>
       </Box>
-      <Box  display="flex" w="100%" mt={2} pl={5} >
+      <Box display="flex" w="100%" mt={2} pl={5}>
         <Text fontSize="30px" fontWeight={700} color="white">
           {price}
         </Text>
       </Box>
-      <Box w="100%"  display="flex" mt={3} gap={3} pl={2}>
+      <Box w="100%" display="flex" mt={3} gap={3} pl={2}>
         <Image src={iconTwo} />
-        <Text color={valueColor} fonSize="14px" fontWeight={600}>{value}</Text>
+        <Text color={valueColor} fonSize="14px" fontWeight={600}>
+          {value}
+        </Text>
         <Text color="#84818A" fonSize="14px" fontWeight={400}>
           {description}
         </Text>

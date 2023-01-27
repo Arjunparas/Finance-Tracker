@@ -15,10 +15,10 @@ import { revenuePlus } from "../assets/images/Icons";
 const RevenueCard = () => {
   return (
     <Box display="flex">
-      <Grid templateColumns="repeat(2, 1fr)" gap={6} mt={8}>
+      <Grid templateColumns={{lg:"repeat(2, 1fr)",md:"repeat(2, 1fr)",sm:"repeat(1, 1fr)"}} gap={6} mt={{lg:8,md:6,sm:4}}>
         {revenueGraphData.map((item) => (
           <GridItem w="100%" gap={8} key={item.value}>
-            <Box bg="rgba(255, 255, 255, 0.1)" pl={3} rounded="xl" pt={5}>
+            <Box bg="rgba(255, 255, 255, 0.1)" pl={3} rounded="xl" pt={{lg:5,md:3,sm:3}}>
               <Box display={"flex"} justifyContent="space-between">
                 <Box mt={2}>
                   <Image src={item.icon} w="57.93px" h="24.62px" />
@@ -28,7 +28,7 @@ const RevenueCard = () => {
                     borderRadius="2xl"
                     bg="rgba(255, 255, 255, 0.1)"
                     w="85%"
-                    h="7vh"
+                    h={{lg:"7vh",md:"4vh",sm:"4vh"}}
                     color="white"
                     style={{ border: "none" }}
                     placeholder="Week"
@@ -45,14 +45,14 @@ const RevenueCard = () => {
                   {item.value}
                 </Text>
               </Box>
-              <Box pl={2} w="285px" ml={1}>
+              <Box  w="285px" ml={1}>
                 <BarGraph bgcolor={item?.bgColor} bdcolor={item?.bdColor} />
               </Box>
             </Box>
           </GridItem>
         ))}
         <Box bg="rgba(255, 255, 255, 0.1)" rounded="xl">
-          <VStack justifyContent="center" alignItem="center" mt={20}>
+          <VStack justifyContent="center" alignItem="center" mt={20} mb={{sm:20}}>
             <Image src={revenuePlus} />
             <Text color="#8F92A1" fontSize="12px" fontWeight={500}>
               Add New Income Source

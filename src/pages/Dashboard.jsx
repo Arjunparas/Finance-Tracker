@@ -19,24 +19,36 @@ import {
   YellowdotIcon,
 } from "../assets/images/Icons";
 import Card from "../components/Card";
-import { card, TransationData,} from "../components/constants/Card";
+import { card, TransationData } from "../components/constants/Card";
 import DoughnutGraph from "../components/DoughnutGraph";
 import Layout from "../components/Layout";
 import LineGraph from "../components/LineGraph";
 import Navbar from "../components/Navbar";
- 
 
 const Dashboard = () => {
   return (
     <Box bg="#1F2128" h="auto">
       <Layout>
         <Navbar title="Dashboard" />
-        <Box display="flex" justifyContent={"space-between"} pl={8}  mt={5}>
+        <Box
+          display="flex"
+          justifyContent={"space-between"}
+          pl={{ lg: 8, md: 6, sm: 4 }}
+          mt={5}
+        >
           <Box>
-            <Text fontSize="36px" fontWeight={600} color="white">
+            <Text
+              fontSize={{ lg: "36px", md: "32px", sm: "28px" }}
+              fontWeight={600}
+              color="white"
+            >
               Good afternoon, Kushagrah
             </Text>
-            <Text color="white" fontSize="14px" fontWeight={600}>
+            <Text
+              color="white"
+              fontSize={{ lg: "14px", md: "12px", sm: "10px" }}
+              fontWeight={600}
+            >
               Friday, 08 September 2021.
               <span style={{ color: "#84818A" }}>
                 Today you have new notification. See you monthly{" "}
@@ -44,12 +56,12 @@ const Dashboard = () => {
               </span>
             </Text>
           </Box>
-          <Box mt={5} w="25%">
+          <Box mt={5} w={{ lg: "25%", md: "24%", sm: "50%" }}>
             <Select
               borderRadius="2xl"
               bg="#35373D"
               w="90%"
-              h="7vh"
+              h={{ lg: "7vh", md: "4vh", sm: "4vh" }}
               mt={4}
               color="white"
               style={{ border: "none" }}
@@ -63,42 +75,60 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        <Box mt={5} display="flex" justifyContent={"space-between"}>
-        {card?.map((item) => (
-       <Card item={item} key={item.title} />
-      ))}
+        <Box
+          mt={5}
+          display={{ lg: "flex", md: "flex", sm: "column" }}
+          justifyContent={"space-between"}
+        >
+          {card?.map((item) => (
+            <Card item={item} key={item.title} />
+          ))}
         </Box>
 
-        <Box display="flex" w="95%" mt={3} gap={5} mx="auto">
-          <Box h="42vh" w="70%" bg="#35373D" rounded="xl" pl={16} mt={2}>
+        <Box
+          display={{ lg: "flex", md: "", sm: "" }}
+          w="95%"
+          mt={3}
+          gap={5}
+          mx="auto"
+        >
+          <Box
+            h={{ lg: "42vh", md: "30vh", sm: "20vh" }}
+            w={{ lg: "70%", md: "100%", sm: "100%" }}
+            bg="#35373D"
+            rounded="xl"
+            pl={{ lg: 16, md: 2 }}
+            mt={2}
+          >
             <LineGraph />
           </Box>
           <Box
-            h="42vh"
-            w="35%"
+            h={{ lg: "42vh", md: "28vh", sm: "30vh" }}
+            w={{ lg: "35%", md: "100%", sm: "100%" }}
             bg="#35373D"
             rounded="xl"
             pl={2}
             mt={2}
           >
-            <Box display="flex" justifyContent={"space-between"} mt={2}>
-              <Box>
-                <Text color="white" fontSize={"16px"} fontWeight={600}>
+            <Box display="flex" justifyContent={"space-between"} mt={{lg:2,md:4,sm:4}}>
+              <Box ml={{sm:2}}>
+                <Text color="white" fontSize={"16px"} fontWeight={600} mt={{sm:2}}>
                   Statictics
                 </Text>
                 <Box display="flex">
                   <Image src={ClockIcon} />
-                  <Text fontSize="10px" fontWeight={500} ml={2} color="#828487">
+                  <Text fontSize="10px" fontWeight={500} ml={{lg:2,md:1}} color="#828487">
                     Updated Saturday, Sep 03, 2021
                   </Text>
                 </Box>
               </Box>
-              <Box w="40%">
+              <Box w={{lg:"40%",md:"30%",sm:"40%"}}>
                 <Select
+                  mt={{sm:2}}
                   borderRadius="2xl"
                   bg="rgba(255, 255, 255, 0.1)"
                   w="90%"
-                  h="6vh"
+                  h={{lg:"6vh",md:"4vh",sm:"4vh"}}
                   color="white"
                   style={{ border: "none" }}
                   placeholder="Shows stats: Monthly"
@@ -116,8 +146,15 @@ const Dashboard = () => {
           </Box>
         </Box>
 
-        <Box display={"flex"} justifyContent={"space-between"} mt={5} w="95%" mx="auto" gap={5}>
-          <Box w="35%" p={3} border="1px" bg="#35373D" borderRadius="xl"pt={3}>
+        <Box
+          display={{lg:"flex",md:"",sm:""}}
+          justifyContent={"space-between"}
+          mt={5}
+          w="95%"
+          mx="auto"
+          gap={5}
+        >
+          <Box w={{lg:"35%",md:"100%",sm:"100%"}} p={3} border="1px" bg="#35373D" borderRadius="xl" pt={3}>
             <Box display="flex" justifyContent={"space-between"} mt={2}>
               <Text fontSize={"14px"} fontWeight={600} color="white">
                 Recent Notes
@@ -176,7 +213,8 @@ const Dashboard = () => {
           </Box>
 
           <Box
-            w="63%"
+          mt={{lg:0,md:4,sm:4}}
+            w={{lg:"63%",md:"",sm:""}}
             p={3}
             border="1px"
             bg="#35373D"
@@ -226,7 +264,7 @@ const Dashboard = () => {
                             <Box mt={1}>
                               <Text
                                 color="white"
-                                fontSize={"14px"}
+                                fontSize={{lg:"14px",md:"12px",sm:"11px"}}
                                 fontWeight={700}
                               >
                                 {item.text}
@@ -239,7 +277,7 @@ const Dashboard = () => {
                           <Text
                             ml={12}
                             color="#8F92A1"
-                            fontSize="12px"
+                            fontSize={{lg:"12px",md:"12px",sm:"10px"}}
                             fontWeight={500}
                           >
                             {item.dayAndTime}
@@ -248,7 +286,7 @@ const Dashboard = () => {
                         <Td>
                           <Text
                             color="white"
-                            fontSize={"14px"}
+                            fontSize={{lg:"14px",md:"12px",sm:"12px"}}
                             fontWeight={700}
                           >
                             {item.amount}
@@ -262,7 +300,8 @@ const Dashboard = () => {
                                 : "#573733"
                             }
                             rounded="xl"
-                            py={2}
+                            py={{lg:2,md:3,sm:2}}
+                            px={{lg:0,md:0,sm:2}}
                           >
                             <Text
                               textAlign="center"
